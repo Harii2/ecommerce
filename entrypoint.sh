@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Wait for database to be ready
+echo "Waiting for database..."
+sleep 10
+
 # Apply database migrations
 echo "Applying database migrations..."
 python manage.py migrate
