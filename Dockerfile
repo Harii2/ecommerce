@@ -3,6 +3,9 @@ FROM python:3.11-slim
 # Set working directory inside the container
 WORKDIR /app
 
+# Ensure Python is in PATH
+ENV PATH="/usr/local/bin:${PATH}"
+
 # Copy requirements.txt to install dependencies
 COPY requirements.txt .
 
