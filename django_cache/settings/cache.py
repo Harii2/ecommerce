@@ -1,4 +1,8 @@
 import os 
+
+# Enable/disable cacheops functionality
+ENABLE_CACHEOPS = os.environ.get("ENABLE_CACHEOPS", "TRUE") == "TRUE"
+
 CACHEOPS_REDIS = os.environ.get(
     "CACHEOPS_REDIS", "redis://localhost:6379/1"
 )
@@ -17,7 +21,6 @@ PRODUCT_APP_CACHEOPS = {
     "products.Product": {"ops": CACHE_OPERATIONS},
 }
 
+# Only apply caching if enabled
 CACHEOPS = {}
-
 CACHEOPS.update(**PRODUCT_APP_CACHEOPS)
-
