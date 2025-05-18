@@ -23,6 +23,9 @@ RUN mkdir -p /app/staticfiles
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
+# Make sure static files are accessible
+RUN chmod -R 755 /app/staticfiles
+
 # Expose port 8000 for the app
 EXPOSE 8000
 
@@ -34,4 +37,4 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Run gunicorn to serve the Django app
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "django_cache.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "django_cache.wsgi:application", "--log-level=debug"]
