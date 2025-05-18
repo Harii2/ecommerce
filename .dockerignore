@@ -1,0 +1,79 @@
+# Git
+.git
+.gitignore
+.github
+
+# Docker
+.docker
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.env
+.venv
+python-env/
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3*
+media/
+static/
+local_settings.py
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.sublime*
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# Local development settings
+.env*
+*.local
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
