@@ -49,3 +49,15 @@ wheels/
 # OS specific files
 .DS_Store
 Thumbs.db
+
+# Docker volumes
+mysql_data/
+redis_data/
+static_volume/
+media_volume/
+
+# Logs
+logs/
+
+# Certbot
+certbot/

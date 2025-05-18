@@ -12,15 +12,19 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-production-key
 # Allow specific hosts or domains
 ALLOWED_HOSTS = ['*']  # Replace with your domain or EC2 IP in production
 
-# Database settings for PostgreSQL
+# Database settings for MySQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('DB_NAME', 'django_db'),
         'USER': os.environ.get('DB_USER', 'django_user'),
         'PASSWORD': os.environ.get('DB_PASSWORD', 'your_secure_password'),
-        'HOST': os.environ.get('DB_HOST', 'db'),  # 'db' is the service name in docker-compose
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'HOST': os.environ.get('DB_HOST', 'db'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
