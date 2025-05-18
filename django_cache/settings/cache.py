@@ -21,6 +21,19 @@ PRODUCT_APP_CACHEOPS = {
     "products.Product": {"ops": CACHE_OPERATIONS},
 }
 
+ORDER_APP_CACHEOPS = {
+    "order.Order": {"ops": CACHE_OPERATIONS},
+    "order.OrderItem": {"ops": CACHE_OPERATIONS},
+    "order.Address": {"ops": CACHE_OPERATIONS},
+}
+
+CART_APP_CACHEOPS = {
+    "cart.Cart": {"ops": CACHE_OPERATIONS},
+    "cart.CartItem": {"ops": CACHE_OPERATIONS},
+}
+
 # Only apply caching if enabled
 CACHEOPS = {}
 CACHEOPS.update(**PRODUCT_APP_CACHEOPS)
+CACHEOPS.update(**ORDER_APP_CACHEOPS)
+CACHEOPS.update(**CART_APP_CACHEOPS)
