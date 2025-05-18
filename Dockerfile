@@ -17,6 +17,12 @@ ENV DJANGO_SETTINGS_MODULE=django_cache.settings.local
 # Copy the entire Django project
 COPY . .
 
+# Create directory for static files
+RUN mkdir -p /app/staticfiles
+
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
 # Expose port 8000 for the app
 EXPOSE 8000
 
