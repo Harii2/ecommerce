@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "products",
-    "cacheops",
+    # "cacheops",  # Commented out until package is installed
     "cart",
-    "order"
+    "order",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
