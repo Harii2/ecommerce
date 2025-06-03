@@ -20,7 +20,8 @@ services:
       - CACHEOPS_REDIS=${CACHEOPS_REDIS}
       - ENABLE_CACHEOPS=${ENABLE_CACHEOPS}
     volumes:
-      - ./static:/var/www/static
+      - ./static:/app/static
+      - /var/www/static
       - ./media:/var/www/media
       - ./logs:/app/logs
     networks:

@@ -39,9 +39,6 @@ ENABLE_CACHEOPS = os.environ.get('ENABLE_CACHEOPS', 'TRUE') == 'TRUE'
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'django_cache/static')
-] if os.path.exists(os.path.join(BASE_DIR, 'django_cache/static')) else [
     os.path.join(BASE_DIR, 'static')
 ]
 
