@@ -36,11 +36,15 @@ CACHEOPS_REDIS = os.environ.get('CACHEOPS_REDIS', 'redis://redis:6379/1')
 ENABLE_CACHEOPS = os.environ.get('ENABLE_CACHEOPS', 'TRUE') == 'TRUE'
 
 # Static files settings
-STATIC_ROOT = '/app/staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = '/var/www/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Media files settings
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/app/media'
+MEDIA_ROOT = '/var/www/media/'
 
 # Security settings
 SECURE_CONTENT_TYPE_NOSNIFF = True

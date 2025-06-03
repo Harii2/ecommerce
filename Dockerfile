@@ -27,14 +27,17 @@ ENV DJANGO_SETTINGS_MODULE=django_cache.settings.local
 # Copy the entire Django project
 COPY . .
 
-# Create directory for static files
-RUN mkdir -p /app/staticfiles
+# Create directories for static and media files
+RUN mkdir -p /var/www/static \
+    && mkdir -p /var/www/media \
+    && mkdir -p /app/staticfiles
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-# Make sure static files are accessible
-RUN chmod -R 755 /app/staticfiles
+# Ensure proper permissions
+RUN chown -R www-data:www-data /var/www/ \
+    && chmod -R 755 /var/www/
 
 # Expose port 8000 for the app
 EXPOSE 8000
