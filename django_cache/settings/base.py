@@ -122,3 +122,10 @@ STATIC_ROOT = str(Path(BASE_DIR).parent / 'staticfiles')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGGING['loggers']['cacheops'] = {
+    'handlers': ['console', 'file'],
+    'level': 'DEBUG',
+    'propagate': False,
+}
